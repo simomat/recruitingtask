@@ -9,7 +9,7 @@
 ```sh
 # in case it's not executable already
 chmod +x build_and_import_spring_boot_app.sh
-./build_and_import_spring_boot_app.sh*
+./build_and_import_spring_boot_app.sh
 ```
 
 The build is done by a docker image itself. Thus, only docker is needed to build the application.
