@@ -1,0 +1,6 @@
+groups:
+- name: random-value-rule
+  interval: 30s
+  rules:
+    - record: job:random_custom_metric:avg
+      expr: rate(random_custom_metric_sum[5m]) / rate(random_custom_metric_count[5m])
