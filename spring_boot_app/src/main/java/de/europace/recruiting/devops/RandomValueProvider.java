@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RandomValueProvider {
 
-  private static final int RATE_3_SECONDS = 300;
+  private static final int RATE_300_MILLIS = 300;
 
   private final RandomCustomMetricService randomCustomMetricService;
 
@@ -30,7 +30,7 @@ public class RandomValueProvider {
    * metric. Doesn't make any sense.
    */
 
-  @Scheduled(fixedRate = RATE_3_SECONDS)
+  @Scheduled(fixedRate = RATE_300_MILLIS)
   public void createRandomValue() {
     var rangedRandom = MIN_RANDOM_VALUE + (MAX_RANDOM_VALUE - MIN_RANDOM_VALUE) * new Random().nextDouble();
     randomCustomMetricService.recordRandomValueMetric(rangedRandom);

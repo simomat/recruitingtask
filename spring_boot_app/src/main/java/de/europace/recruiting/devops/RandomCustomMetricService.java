@@ -2,6 +2,7 @@ package de.europace.recruiting.devops;
 
 import static de.europace.recruiting.devops.Constants.MAX_RANDOM_VALUE;
 import static de.europace.recruiting.devops.Constants.MIN_RANDOM_VALUE;
+import static java.text.MessageFormat.format;
 
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,7 @@ public class RandomCustomMetricService {
   public RandomCustomMetricService(MeterRegistry registry) {
     radnomDistributionSummary = DistributionSummary
         .builder("random.custom.metric")
-        .description("a random value between 20 and 50")
+        .description(format("a random value between {0} and {1}", MIN_RANDOM_VALUE, MAX_RANDOM_VALUE))
         .tags("application", "randommetric")
         .minimumExpectedValue(MIN_RANDOM_VALUE)
         .maximumExpectedValue(MAX_RANDOM_VALUE)
